@@ -5,6 +5,19 @@ $(document).ready(init);
 function init() {
     $('.glyphicon').on('click', toggleFavorite);
     $('#save-contact').on('click', addContact);
+    $('#filter').on('keyup', filter);
+}
+
+function filter() {
+    var filter = $(this).val();
+
+    $('.media').each(function() {
+        if ($(this).text().search(new RegExp(filter, 'i')) < 0) {
+            $(this).fadeOut();
+        } else {
+            $(this).show();
+        }
+    });
 }
 
 function toggleFavorite() {
