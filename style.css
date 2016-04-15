@@ -1,0 +1,12 @@
+body {
+    font-family: 'Noto Sans';
+}
+
+.bold {
+    font-weight: bold;
+}
+
+img {
+    width: 75px;
+    height: 75px;
+}
