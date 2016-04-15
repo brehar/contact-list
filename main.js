@@ -6,6 +6,7 @@ function init() {
     $('.glyphicon').on('click', toggleFavorite);
     $('#save-contact').on('click', addContact);
     $('#filter').on('keyup', filter);
+    $('.delete').on('click', deleteContact);
 }
 
 function filter() {
@@ -55,7 +56,7 @@ function addContact() {
                     </div>
                     <div class="col-md-2 col-xs-12">
                         <button class="btn btn-primary">Edit</button>
-                        <button class="btn btn-danger">Delete</button>
+                        <button class="btn btn-danger delete">Delete</button>
                     </div>
                 </div>
             </div>
@@ -66,6 +67,9 @@ function addContact() {
     $('.glyphicon').off('click');
     $('.glyphicon').on('click', toggleFavorite);
 
+    $('.delete').off('click');
+    $('.delete').on('click', deleteContact);
+
     $('#name').val('');
     $('#phone').val('');
     $('#address').val('');
@@ -73,4 +77,8 @@ function addContact() {
     $('#image').val('');
 
     $('#myModal').modal('toggle');
+}
+
+function deleteContact() {
+    $(this).parent().parent().parent().parent().remove();
 }
